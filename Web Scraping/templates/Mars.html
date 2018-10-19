@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+  <div class="container-fluid">
+          <ul style="list-style: none;">
+             <h1 id="text-color">Latest News:</h1>
+              {%for story in stories%}
+                <li id="text-color"><h3 >{{story.news_title}}</h3>{{ story.paragraphs}}</li>
+              {% endfor %}
+          </ul>
+      </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 id="text-color" style="margin-bottom:4%;">Featured Mars Image</h3>
+        {%for image in featured_image_url%}
+        <img src="{{image.image}}" alt="">
+        {% endfor %}  
+      </div>
+
+          <div class="col-md-5" style="border: 4px solid white; margin-top:6%">
+
+              <h3 id="text-color"> <u> Current Weather On Mars</u></h3>
+              
+              {%for weather in weather_dict%}
+              <p id="text-color">{{mars_weather.mars_weather}} </p>
+              {% endfor %} <br>
+
+          </div>
+        </div id="mars_table">
+"{{mars | safe}}"
+        <!--Table-->
+       <div>
+       
+       </div> 
+</body>
+
+
+</html>
+
