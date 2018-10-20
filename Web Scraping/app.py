@@ -21,7 +21,7 @@ def home():
     # Find data
     stories = mongo.db.collection.find()
     mars = scrape.mars_table()
-    images=scrape.
+    
     # return template and data
     return render_template("Mars.html", stories=stories, mars=mars)
 
